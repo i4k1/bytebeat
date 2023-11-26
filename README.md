@@ -4,7 +4,7 @@ Bytebeat это довольно своеобразная музыка без к
 Если вам интересно, можете посетить [этот сайт](https://dollchan.net/bytebeat), здесь собраны различные треки. Помимо классического bytebeat, там присутствуют более сложные и разнообразные композиции (уже не совместимые с Си), а также floatbeat.
 ## Компиляция
 Вам понадобится библиотека SDL2 и компилятор C. Пока что я тестировал только под Win10 и mingw-w64.
-`gcc main.c -pedantic -Wall -Wextra -O3 -lmingw32 -lSDL2main -lSDL2 -o bytebeat`
+`gcc bytebeat_sdl2.c -pedantic -Wall -Wextra -O3 -lmingw32 -lSDL2main -lSDL2 -o bytebeat_sdl2`
 ## Музыка
 Чтобы заставить программу играть звук, нужно на [33 строке](https://github.com/i4k1/bytebeat/blob/main/bytebeat_sdl2.c#L33), вместо комментария `/* paste your formula here */` вставить свою формулу. Ниже список различных формул, которые я счёл наиболее интересными (брал [отсюда](https://dollchan.net/bytebeat)).
 - Простейший треугольник Серпинского: `t&t>>8`
