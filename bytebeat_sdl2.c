@@ -14,10 +14,17 @@
  */
 
 #include <stdio.h>
+#include <signal.h>
 #include <SDL2/SDL.h>
 
 int main(int argc, char **argv) {
-    SDL_Init(SDL_INIT_AUDIO);
+    if (SDL_Init(SDL_INIT_AUDIO) != 0) {
+        SDL_Log("error: unable to init sdl2: %s", SDL_GetError());
+        return 1;
+    }
+
+    signal(SIGINT, SDL_Quit); // Ctrl+C
+    
     SDL_AudioSpec want, have;
     want.freq = 32000;
     want.format = AUDIO_U8;
