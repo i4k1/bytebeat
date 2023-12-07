@@ -7,7 +7,7 @@
 - Чтобы заставить программу играть звук, нужно на [33 строке](bytebeat_sdl2.c#L33), вместо комментария `/* paste your formula here */` вставить свою формулу
 - Пока что я тестировал только под Windows 10, компилируя через MinGW-w64: `gcc bytebeat_sdl2.c -pedantic -Wall -Wextra -O3 -lmingw32 -lSDL2main -lSDL2 -o bytebeat_sdl2`
 2. [`bytebeat_simple.c`](bytebeat_simple.c) - простейшая реализация Bytebeat на Си. Для воспроизведения нужны конвейеры unix, например: `./a.out | aplay` или `./a.out | sox -traw -r800 -b8 -e unsigned-integer`
-3. [`bytebeat_wav.go`](bytebeat_wav.go) - реализация Bytebeat на Go. Программа генерирует `output.wav`, который затем можно прослушать в любом медиаплеере; `go build ./bytebeat_wav.go`
+3. [`bytebeat_wav.go`](bytebeat_wav.go) - реализация Bytebeat на Go. Программа генерирует `output.wav`, который затем можно прослушать в любом медиаплеере; `go run ./bytebeat_wav.go`
 ## Музыка
 Ниже список различных формул, которые я счёл наиболее интересными (брал [отсюда](https://dollchan.net/bytebeat)).
 - `t&t>>8` - Простейший треугольник Серпинского
